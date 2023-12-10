@@ -125,8 +125,8 @@ try:
 
 
                     # Streamlit code
-                    movies = pickle.load(open('pages/artificats/movie_list.pkl', 'rb'))
-                    similarity = pickle.load(open('pages/artificats/similarity.pkl', 'rb'))
+                    movies = pickle.load(open('movie_list.pkl', 'rb'))
+                    similarity = pickle.load(open('similarity.pkl', 'rb'))
 
                     movie_list = movies['title'].values
 
