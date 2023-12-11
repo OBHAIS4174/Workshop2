@@ -1,0 +1,13 @@
+prefix=D:/Downloads/workshop 2/env/Library
+exec_prefix=D:/Downloads/workshop 2/env/Library
+libdir=D:/Downloads/workshop 2/env/Library/lib
+sharedlibdir=D:/Downloads/workshop 2/env/Library/lib
+includedir=D:/Downloads/workshop 2/env/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
