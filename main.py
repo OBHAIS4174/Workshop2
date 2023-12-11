@@ -1,5 +1,4 @@
-pip install streamlit-authenticator
-pip insatll deta
+
 
 import streamlit as st
 import streamlit_authenticator as stauth
