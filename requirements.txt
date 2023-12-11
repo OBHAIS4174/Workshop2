@@ -2,4 +2,4 @@ streamlit_option_menu
 plotly.express
 deta
 streamlit_authenticator
-pickle
+
