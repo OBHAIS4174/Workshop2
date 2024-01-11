@@ -1,0 +1,551 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Buddy",
+        "What's up, bro",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "Assalamualaikum",
+        "Salam",
+        "Vanakam",
+        "Hye",
+        "Hola",
+        "Ola",
+        "Wadup",
+        "Bonjour"
+      ],
+      "responses": [
+        "Welcome to our movie recommendation website, User_name! How can I assist you today?",
+        "Hello, User_name! Thanks for visiting. How may I assist you today? \uD83D\uDE0A",
+        "Hi there, User_name! What can I do for you today? \uD83D\uDE0A",
+        "Hello, User_name! How can I help you today? \uD83D\uDE0A"
+      ]
+
+    },
+     {
+      "tag": "update_profile",
+      "patterns": [
+        "How can I update my profile information?",
+        "Tell me about changing profile details",
+        "What are the steps to modify my profile?"
+      ],
+      "responses": [
+        "To update your profile, go to the 'Profile' page and click on the 'Edit Profile' button. You can then modify your name, age, gender, and other information."
+      ]
+    },
+     {
+      "tag": "change_password",
+      "patterns": [
+        "How can I change my password?",
+        "Tell me about updating my account password",
+        "What are the steps to change my login password?",
+        "Is there a way to reset my password?"
+      ],
+      "responses": [
+        "To change your password, go to the 'Profile' page and change your password. Follow the instructions to update your password securely."
+      ]
+    },
+    {
+      "tag": "kids_movies",
+      "patterns": [
+        "Recommend movies suitable for kids",
+        "Tell me about children's films",
+        "Suggest family-friendly movies for children",
+        "Any animated movies appropriate for kids?"
+      ],
+      "responses": [
+        "For a delightful movie night with the little ones, consider 'Toy Story,' 'The Lion King,' and 'Finding Nemo.' These films are perfect for kids and family enjoyment."
+      ]
+    },
+    {
+      "tag": "random_recommendation",
+      "patterns": [
+        "Surprise me with a random movie recommendation",
+        "Give me a random movie suggestion",
+        "Can you recommend a film randomly?",
+        "I'm feeling adventurous, suggest me a random movie"
+      ],
+      "responses": [
+        "Feeling spontaneous? How about trying out 'The Matrix' for an action-packed journey or 'Amélie' for a charming and whimsical experience? Enjoy the surprise!"
+      ]
+    },
+    {
+      "tag": "coming_soon",
+      "patterns": [
+        "What upcoming movies should I look forward to?",
+        "Tell me about upcoming releases",
+        "Any exciting films on the horizon?",
+        "What's in store for the future in terms of movie releases?"
+      ],
+      "responses": [
+        "Stay tuned for upcoming releases! We regularly update our catalog with the latest films. Check the 'Coming Soon' section for a sneak peek into the future of cinema."
+      ]
+    },
+     {
+      "tag": "user_reviews",
+      "patterns": [
+        "Can I leave a review for a movie?",
+        "How can I share my thoughts on a film?",
+        "Tell me about writing movie reviews",
+        "Is there a way to rate and review movies?"
+      ],
+      "responses": [
+        "Absolutely! You can leave a review for a movie by visiting the profile page and clicking on the 'Leave a Review' button. Share your thoughts and help others discover great films!"
+      ]
+    },
+
+    {
+      "tag": "compliments",
+      "patterns": [
+        "How are you?",
+        "How is your day?"
+      ],
+      "responses": [
+        "I am fine, thank you. What kind of help do you need?",
+        "Thank you for asking. It was a good day for me. How about yours?",
+        "Thank you for inquiring. It had been a fantastic day for me. What about yours?"
+      ]
+    },
+    {
+      "tag": "provide_name",
+      "patterns": [
+           "My name is {user_name}",
+           "{user_name}",
+           "I am {user_name}",
+           "This is {user_name}"
+    ],
+      "responses": ["Nice to meet you, {user_name}! How can I assist you today?"]
+    },
+
+
+
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye", "Nothing", "No", "That's all for now", "So far no"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!", "Oh i see...", "Oh", "Ofcourse"],
+      "responses": ["Happy to help! Is there anything else you would like to ask?",
+        "Any time! Do you have any other queries? ",
+        "My pleasure, feel free to ask any other questions?" ,
+        "You are most welcome. Anything else?",
+        "Welcome, do you like to ask any other queries?"  ]
+    },
+    {
+      "tag": "movies",
+      "patterns": [
+        "What kind of movie do you have on this website?",
+        "What movies are there?",
+        "movies",
+        "type of movies",
+        "genre"
+      ],
+      "responses": [
+        "We have many kinds of movies like action, comedy, drama, horror, fantasy, thriller, romance, animation, documentary, and mystery.",
+        "We provide a wide variety of film genres, including romance, thrillers, action, comedy, drama, horror, fantasy, animation, and mystery.",
+        "We do have variety of movies like \"Die Hard\"(1988), \"Mad Max Fury Road\"(2015), \"Superbad\"(2007), \"Bridesmaids\"(2011), \"Forrest Gump\"(1994), \"The Shawshank Redemption\"(1994), \"The Exorcist\"(1973), \"Get Out\"(2017), \"Harry Potter and the Sorcerer's Stone\"(2001), \"The Lord of the Rings: The Fellowship of the Ring\"(2001), \"The Silence of the Lambs\"(1991), \"Seven\"(1995), \"The Notebook\"(2004), \"Pride and Prejudice\"(2005), and many more."
+      ]
+    },
+    {
+      "tag": "action",
+      "patterns": [
+        "What are some popular movies in the action genre?",
+        "action",
+        "suggest me action movies",
+        "what kind of action movies do you have?"
+      ],
+      "responses": [
+        "For action movies, I recommend checking out \"Mad Max: Fury Road,\" \"John Wick,\" and \"Die Hard.\"",
+        "Great choices! If you're into action, you might also enjoy \"The Dark Knight,\" \"Inception,\" \"The Bourne Identity,\" \"Gladiator,\" and \"Mission: Impossible - Fallout\" for an adrenaline-filled movie marathon."
+      ]
+    },
+    {
+      "tag": "actor_recommendation",
+      "patterns": [
+        "Recommend movies with ",
+        "Movies starring ",
+        "Best films with ",
+        "Any good movies featuring ",
+        "Tell me about 's movies"
+      ],
+      "responses": [
+        "Sure, if you're a fan of this actor, you can use the 'Recommendation Page' to find movies featuring them. Simply go to the 'Recommendation' section, and enter actor name in the search bar. Enjoy discovering movies with your favorite actor!"
+      ]
+    },
+    {
+      "tag": "homepage",
+      "patterns": [
+        "What will I find on the homepage?",
+        "Tell me about the content on the homepage",
+        "What's featured on the homepage?"
+      ],
+      "responses": [
+        "The homepage gives a brief overview of the website"
+      ]
+    },
+    {
+      "tag": "about_page",
+      "patterns": [
+        "Tell me about the website",
+        "What is the purpose of this website?",
+        "Can you provide information about the platform?"
+      ],
+      "responses": [
+        "Our website is a movie recommendation platform designed to help users discover movies based on their preferences. It offers a diverse collection of films across genres."
+      ]
+    },
+     {
+      "tag": "contact_us",
+      "patterns": [
+        "How can I contact support?",
+        "Tell me about contacting customer service",
+        "What's the process to reach out for assistance?"
+      ],
+      "responses": [
+        "If you need assistance, click on the 'Contact Us' link in the footer. You can fill out the contact form with your inquiry, and our support team will get back to you."
+      ]
+    },
+    {
+      "tag": "recommendation_page",
+      "patterns": [
+        "How does the recommendation page work?",
+        "Tell me about personalized recommendations",
+        "What will I find on the recommendation page?"
+      ],
+      "responses": [
+        "The recommendation page offers personalized movie suggestions based on your preferences. Explore curated lists and find movies tailored to your taste. You can also search for movies and view details by clicking on the posters."
+      ]
+    },
+     {
+      "tag": "profile_page",
+      "patterns": [
+        "What's on my profile page?",
+        "Tell me about the user profile",
+        "How can I manage my account settings?"
+      ],
+      "responses": [
+        "Your profile page provides an overview of your account. You can manage account settings, update preferences, change your password, and leave reviews for the website."
+      ]
+    },
+
+
+    {
+      "tag": "romantic",
+      "patterns": [
+        "Can you suggest a good romantic comedy for a movie night?",
+        "romantic",
+        "suggest me a romantic movie",
+        "what kind of romantic movies do you have?",
+        "Can you suggest a good love comedy for a movie night?",
+        "love",
+        "suggest me a love movie",
+        "what kind of love movies do you have?"
+      ],
+      "responses": [
+        "How about watching \"Crazy, Stupid, Love\" or \"When Harry Met Sally\"? They're both delightful romantic comedies.",
+        "Sure thing! How about trying \"500 Days of Summer\" for a unique take on love, \"The Proposal\" for some charming humor, \"Notting Hill\" for a classic romance, \"La La Land\" for a modern musical experience, and \"Silver Linings Playbook\" for a blend of romance and humor?"
+      ]
+    },
+    {
+      "tag": "classic",
+      "patterns": [
+        "I'm in the mood for a classic film. Any recommendations",
+        "classic",
+        "classical",
+        "suggest me a classic movie",
+        "what kind of classic movies do you have?"
+      ],
+      "responses": [
+        "If you're in the mood for a classic, consider watching \"Casablanca,\" \"Gone with the Wind,\" or \"The Godfather.\"",
+        "For more classic movie vibes, you might also enjoy \"Citizen Kane\" for its cinematic brilliance, \"Breakfast at Tiffany's\" for a touch of elegance, and \"Lawrence of Arabia\" for an epic adventure where these films promise to transport you to different eras with their timeless storytelling and iconic characters."
+      ]
+    },
+    {
+      "tag": "sci-fi",
+      "patterns": [
+        "I enjoy sci-fi movies. What's a recent sci-fi release?",
+        "sci-fi",
+        "suggest me a sci-fi movie",
+        "what kind of sci-fi movies do you have?"
+      ],
+      "responses": [
+        "A recent sci-fi gem is \"Dune.\" It has stunning visuals and an engaging storyline. Give it a try!",
+        "Great pick! If you're into sci-fi, you might also enjoy \"Interstellar\" for its mind-bending journey, \"Blade Runner 2049\" for its dystopian atmosphere, and \"The Martian\" for a thrilling survival story in space."
+      ]
+    },
+    {
+      "tag": "thriller",
+      "patterns": [
+        "What's a highly-rated thriller movie that keeps you on the edge of your seat",
+        "thriller",
+        "suggest a thriller movie",
+        "what kind of thriller movies do you have?",
+        "I'm in the mood for a suspenseful thriller. Any recommendations"
+      ],
+      "responses": [
+        "If you're into thrillers, \"Se7en,\" \"Gone Girl,\" and \"The Silence of the Lambs\" are intense and well-received by audiences.",
+        "Great choice! For more heart-pounding thrills, consider watching \"Prisoners\" for its gripping mystery, \"The Departed\" for its suspenseful twists, and \"Shutter Island\" for a psychological rollercoaster. These movies are sure to keep you on the edge of your seat with their suspenseful plots and brilliant storytelling."
+      ]
+    },
+    {
+      "tag": "documentary",
+      "patterns": [
+        "Can you recommend a good documentary for a documentary night",
+        "documentary",
+        "suggest a documentary movie",
+        "what kind of documentary movies do you have?"
+      ],
+      "responses": [
+        "Absolutely! Consider watching \"Won't You Be My Neighbor?\" or \"The Social Dilemma\" for thought-provoking documentaries.",
+        "Certainly! If you're into documentaries, you might also enjoy \"Blackfish\" for its exploration of marine life in captivity, \"Jiro Dreams of Sushi\" for an insightful look into the world of sushi craftsmanship, and \"Free Solo\" for a breathtaking journey into the world of rock climbing. These documentaries offer diverse perspectives and engaging storytelling for a documentary night. Enjoy the exploration!"
+      ]
+    },
+    {
+      "tag": "underrated",
+      "patterns": [
+        "Are there any hidden gems or underrated movies you'd recommend?",
+        "underrated",
+        "suggest an underrated movie",
+        "what kind of underrated movies do you have?"
+      ],
+      "responses": [
+        "Certainly! Check out \"Moonlight,\" \"The Grand Budapest Hotel,\" or \"Eternal Sunshine of the Spotless Mind\" for some underrated brilliance."
+      ]
+    },
+    {
+      "tag": "friends",
+      "patterns": [
+        "What's a good movie to watch with friends for a fun movie night?",
+        "friends",
+        "suggest a movie that can watch with friends",
+        "what kind of movies do you have that can watch with friends?"
+      ],
+      "responses": [
+        "For a fun movie night with friends, consider \"Superbad,\" \"Bridesmaids,\" or \"The Hangover.\" They're guaranteed to bring laughter!",
+        "Absolutely! Consider watching \"Superbad\" for a night filled with laughter. It's a hilarious comedy that's perfect for a movie marathon with friends."
+      ]
+    },
+    {
+      "tag": "account",
+      "patterns": [
+        "How to use this website",
+        "What are the procedures to create an account",
+        "How to use it",
+        "What are the steps to create an account",
+        "what are the steps?",
+        "what should I need to do now?",
+        "steps",
+        "steps to create an account",
+        "what need to do now?"
+      ],
+      "responses": [
+        "1. First of all, create an account or log in to the website.\n2. Then, choose the movie you want to watch. You can search for it. \n3. Finally, enjoy watching the movie that you choose..."
+      ]
+    },
+    {
+      "tag": "why_created",
+      "patterns": [
+        "Why was this project created?",
+        "What is the purpose of this project?",
+        "Why did you create this project?",
+        "Reason for creating this project"
+      ],
+      "responses": [
+        "This project was created for Workshop '2,' which is a core subject for BITI course. The project is built by students from Utem University, specifically from FTMK faculty. If you have any questions about using the system, feel free to ask!"
+      ]
+    },
+     {
+      "tag": "website_help",
+      "patterns": [
+        "How can I get help on the website?",
+        "Is there a user guide?",
+        "What should I do if I encounter issues?"
+      ],
+      "responses": [
+        "If you need assistance, you can click on the 'Contact us' section on the website. We also have a user guide to guide you through common tasks. If you encounter any issues, feel free to reach out for support."
+      ]
+    },
+    {
+      "tag": "recommendation_options",
+      "patterns": [
+        "How can I get movie recommendations?",
+        "Tell me about the recommendation options",
+        "What are the ways to discover new movies?"
+      ],
+      "responses": [
+        "You can click on the 'Recommendations' button to get personalized movie suggestions based on your preferences. Additionally, you can explore different genres, search for specific actors, or check out the latest releases."
+      ]
+    },
+    {
+      "tag": "holiday_movies",
+      "patterns": [
+        "Any recommendations for holiday-themed movies?",
+        "Tell me about movies for the holiday season",
+        "Suggest festive movies for the holidays"
+      ],
+      "responses": [
+        "Celebrate the holidays with movies like 'Home Alone,' 'Elf,' and 'Love Actually.' These films capture the spirit of the season.",
+        "Get into the festive mood with holiday classics such as 'It's a Wonderful Life,' 'A Christmas Carol,' and 'The Polar Express.'"
+      ]
+    },
+    {
+      "tag": "family_movies",
+      "patterns": [
+        "Suggest family-friendly movies",
+        "Tell me about movies suitable for families",
+        "Recommend films for family movie night"
+      ],
+      "responses": [
+        "Enjoy family movie nights with classics like 'The Lion King,' 'Toy Story,' and 'Finding Nemo.' These films are perfect for all ages.",
+        "Create lasting memories with family-friendly movies such as 'Frozen,' 'The Incredibles,' and 'Shrek.'"
+      ]
+    },
+     {
+      "tag": "tv_shows",
+      "patterns": [
+        "Recommend popular TV shows",
+        "Tell me about TV series",
+        "Suggest binge-worthy TV shows"
+      ],
+      "responses": [
+        "Dive into captivating TV series like 'Stranger Things,' 'Breaking Bad,' and 'The Mandalorian.'",
+        "For an immersive experience, explore TV shows such as 'Game of Thrones,' 'The Witcher,' and 'Friends.'"
+      ]
+    },
+       {
+      "tag": "future_features",
+      "patterns": [
+        "What future features are planned for this website?",
+        "Tell me about upcoming updates",
+        "What improvements can we expect?"
+      ],
+      "responses": [
+        "We're continuously working on enhancing the user experience. Stay tuned for updates that may include new genres, personalized recommendations, and more.",
+        "Exciting things are in the pipeline! Future features may include advanced search options, user-curated playlists, and an expanded library of movies and TV shows."
+      ]
+    },
+    {
+      "tag": "animated_movies",
+      "patterns": [
+        "Recommend animated movies",
+        "Tell me about animated films",
+        "Suggest animated movies for all ages"
+      ],
+      "responses": [
+        "Delight in animated wonders with recommendations like 'Toy Story,' 'Finding Nemo,' and 'The Lion King.' Animated movies are perfect for audiences of all ages.",
+        "Embark on animated adventures! Enjoy films such as 'Coco,' 'Moana,' and 'Zootopia' that captivate audiences with heartwarming stories and stunning animation."
+      ]
+    },
+    {
+      "tag": "login",
+      "patterns": [
+        "How do I log in?",
+        "Tell me about the login process",
+        "What are the steps to sign in?"
+      ],
+      "responses": [
+        "To log in, click on the 'Login' button at the down-middle corner of the page. Enter your email and password to access your account."
+      ]
+    },
+     {
+      "tag": "signup",
+      "patterns": [
+        "How do I sign up?",
+        "Tell me about the signup process",
+        "What are the steps to create an account?"
+      ],
+      "responses": [
+        "To sign up, click on the 'Register' button at the top-right corner of the login page. Fill in the required information, including your name, email, password, age, gender, and state."
+      ]
+    },
+     {
+      "tag": "homepage",
+      "patterns": [
+        "What will I find on the homepage?",
+        "Tell me about the content on the homepage",
+        "What's featured on the homepage?"
+      ],
+      "responses": [
+        "The homepage gives a brief of the website, as well have the predication button"
+      ]
+    },
+    {
+      "tag": "about_page",
+      "patterns": [
+        "Tell me about the website",
+        "What is the purpose of this website?",
+        "Can you provide information about the platform?"
+      ],
+      "responses": [
+        "Our website is a movie recommendation platform designed to help users discover movies based on their preferences. It offers a diverse collection of films across genres."
+      ]
+    },
+     {
+      "tag": "contact_us",
+      "patterns": [
+        "How can I contact support?",
+        "Tell me about contacting customer service",
+        "What's the process to reach out for assistance?"
+      ],
+      "responses": [
+        "If you need assistance, click on the 'Contact Us' link in the footer. You can fill out the contact form with your inquiry, and our support team will get back to you."
+      ]
+    },
+      {
+      "tag": "rate_website",
+      "patterns": [
+        "Can I rate the website?",
+        "Tell me about giving feedback",
+        "How can I share my thoughts about the platform?"
+      ],
+      "responses": [
+        "We appreciate your feedback! You can provide a rating for the website on the 'Rate Us' page. Your input helps us enhance the user experience."
+      ]
+    },
+     {
+      "tag": "recommendation_page",
+      "patterns": [
+        "How does the recommendation page work?",
+        "Tell me about personalized recommendations",
+        "What will I find on the recommendation page?"
+      ],
+      "responses": [
+        "The recommendation page offers personalized movie suggestions based on your preferences. Explore curated lists and find movies tailored to your taste."
+      ]
+    },
+     {
+      "tag": "profile_page",
+      "patterns": [
+        "What's on my profile page?",
+        "Tell me about the user profile",
+        "How can I manage my account settings?"
+      ],
+      "responses": [
+        "Your profile page provides an overview of your account. You can manage account settings, update preferences."
+      ]
+    },
+    {
+      "tag": "how_to_use",
+      "patterns": [
+        "How can I use this system?",
+        "What is the usage guide for this website?",
+        "How do I navigate through this website?",
+        "How can I make the most of this website?"
+      ],
+      "responses": [
+        "You can click on the recommendation or prediction button, then the recommendation page opens. You can search for a movie by choosing the movie title from the dropdown or by entering the description you want, like the movie name, genre, or specific actor."
+      ]
+    }
+  ]
+}
