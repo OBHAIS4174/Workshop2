@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+        crossorigin="anonymous">
+    <style>
+        /* Add hover effects for navigation buttons */
+        nav a:hover {
+            color: #1a202c; /* Change the color on hover */
+            transition: color 0.3s ease-in-out; /* Add a smooth transition effect */
+        }
+
+        /* Add styling for the active link */
+        nav a.active {
+            color: #4CAF50; /* Set the color for the active link */
+            font-weight: bold; /* Add bold font weight for the active link */
+        }
+
+        .form-container {
+            margin: 0 auto; /* Center the form */
+            max-width: 400px; /* Adjust the max-width as needed */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px; /* Adjust the margin-top as needed */
+        }
+
+        body {
+            background-image: url('/static/images/—Pngtree—simple character financial business_935328.jpg'); /* Set background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-attachment: fixed; /* Fixed background image */
+        }
+    /* Add this to your existing CSS */
+        .btn.text-black {
+            color: black;
+        }
+
+        /* Style for the green color when pressed (Bootstrap class) */
+        .btn-success {
+            color: #fff;
+            background-color: #28a745; /* Green color */
+            border-color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="text-gray-600 body-font -my-8">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <a href="index"><span class="ml-3 text-xl">Movies Recommendation System</span></a>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a href="{{ url_for('index') }}"
+                    class="mr-5 hover:text-gray-900 {% if request.path == '/' %}active{% endif %}">Home</a>
+                <a href="/about"
+                    class="mr-5 hover:text-gray-900 {% if request.path == '/about' %}active{% endif %}">About</a>
+                <a href="/contact"
+                    class="mr-5 hover:text-gray-900 {% if request.path == '/contact' %}active{% endif %}">Contact Us</a>
+                <a href="/recommendation"
+                    class="mr-5 hover:text-gray-900 {% if request.path == '/recommendation' %}active{% endif %}">Recommendation</a>
+                <a href="/dashboard"
+                    class="mr-5 hover:text-gray-900 {% if request.path == '/dashboard' %}active{% endif %}">Dashboard</a>
+                <a href="/profile"
+                    class="mr-5 hover:text-gray-900 {% if request.path == '/profile' %}active{% endif %}">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mt-4 form-container">
+        <h2 class="mb-4">Welcome, {{ user.Name }}!</h2>
+
+        <!-- Edit Profile Form -->
+        <form id="editProfileForm" method="POST" action="{{ url_for('edit_profile') }}">
+            <h3 class="mb-3">Edit Profile</h3>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ user.Name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{ user.Age }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender:</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="Male" {% if user.Gender == 'Male' %}selected{% endif %}>Male</option>
+                    <option value="Female" {% if user.Gender == 'Female' %}selected{% endif %}>Female</option>
+                    <!-- Add more options if needed -->
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="state" class="form-label">State:</label>
+                <input type="text" class="form-control" id="state" name="state" value="{{ user.State }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary text-black">Save Changes</button>
+        </form>
+
+        <hr class="my-4">
+
+
+        <!-- Change Password Form -->
+        <form id="changePasswordForm" method="POST" action="{{ url_for('change_password') }}">
+            <h3 class="mb-3">Change Password</h3>
+            <div class="mb-3">
+                <label for="current_password" class="form-label">Current Password:</label>
+                <input type="password" class="form-control" id="current_password" name="current_password" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_password" class="form-label">New Password:</label>
+                <input type="password" class="form-control" id="new_password" name="new_password" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">Confirm New Password:</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            </div>
+            <button type="submit" class="btn btn-primary text-black">Change Password</button>
+        </form>
+
+        <hr class="my-4">
+
+        <!-- Feedback Form -->
+        <!-- Feedback Form -->
+        <form id="feedbackForm" method="POST" action="{{ url_for('feedback') }}">
+            <h3 class="mb-3">Feedback</h3>
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating (0-10):</label>
+                <input type="range" class="form-control" id="rating" name="rating" min="0" max="10" required>
+            </div>
+            <div class="mb-3">
+                <label for="text_feedback" class="form-label">Text Feedback:</label>
+                <textarea class="form-control" id="text_feedback" name="text_feedback" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary text-black">Submit Feedback</button>
+        </form>
+
+    </div>
+
+ <!-- Logout Button -->
+        <form method="POST" action="{{ url_for('logout') }}" class="position-absolute top-0 end-0 m-4">
+            <button type="submit" class="btn btn-danger text-black">Logout</button>
+        </form>
+    </div>
+          <!-- Logout Button -->
+            <form method="POST" action="{{ url_for('logout') }}" class="position-absolute top-0 end-0 m-4">
+                <button type="submit" class="btn btn-danger text-black">Logout</button>
+            </form>
+        </div>
+      </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+  {% include 'base.html' %}
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function handleFormSubmission(formId, successMessage) {
+                document.getElementById(formId).addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    fetch(this.action, {
+                        method: this.method,
+                        body: new URLSearchParams(new FormData(this)),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                alert(successMessage);
+                            } else {
+                                console.error(data.message);
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+                });
+            }
+
+            // Handle form submissions for each form
+            handleFormSubmission('editProfileForm', 'Profile updated successfully');
+            handleFormSubmission('changePasswordForm', 'Password changed successfully');
+            handleFormSubmission('feedbackForm', 'Feedback submitted successfully');
+        });
+    </script>
+</body>
+
+</html>

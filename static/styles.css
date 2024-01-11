@@ -1,0 +1,81 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+  background-color: #3498db; /* Set background color to a nice blue shade */
+  color: #fff; /* Set text color to white */
+}
+
+.container {
+  max-width: 1200px; /* Limit container width for better readability */
+}
+
+/* Header Styles */
+header {
+  background-color: #16d242; /* Set header background color */
+  padding: 0.5rem 0; /* Add padding to the header */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  width: 40px; /* Adjust logo size */
+  margin-right: 10px; /* Add spacing between logo and text */
+}
+
+.header-logo span {
+  font-size: 1.5rem; /* Adjust font size for better visibility */
+}
+
+nav a {
+  color: #fff; /* Set navigation link color to white */
+  margin-right: 15px; /* Add spacing between navigation links */
+  font-size: 1rem; /* Adjust font size */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Add underline effect on hover */
+}
+
+/* Main Section Styles */
+.section-container {
+  padding: 4rem 0; /* Add padding to the main section container */
+}
+
+.section-title {
+  font-size: 2.5rem; /* Adjust font size for section titles */
+  font-weight: bold; /* Set font weight to bold for emphasis */
+  text-align: center; /* Center-align section titles */
+  margin-bottom: 2rem; /* Add spacing below section titles */
+}
+
+/* Testimonials Styles */
+.testimonial-card {
+  background-color: #16d242; /* Set testimonial card background color */
+  padding: 1rem; /* Add padding to testimonial cards */
+  margin-bottom: 1rem; /* Add spacing between testimonial cards */
+  border-radius: 6px; /* Add border-radius for rounded corners */
+}
+
+.testimonial-text {
+  font-size: 1.2rem; /* Adjust font size for testimonial text */
+  margin-bottom: 1.5rem; /* Add spacing below testimonial text */
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  width: 50px; /* Adjust author image size */
+  border-radius: 50%; /* Create a circular border for author image */
+  margin-right: 1rem; /* Add spacing between author image and text */
+}
+
+.author-info {
+  font-size: 1rem; /* Adjust font size for author information */
+}
