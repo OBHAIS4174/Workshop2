@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <style>
+        /* Add some basic styles for the pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 70%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .chat-messages {
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            display: inline-flex;
+        }
+
+        .chat-link {
+            color: black;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 5px 10px;
+            background-color: lightgray;
+            text-decoration: none;
+        }
+
+        /* Add some basic styles for the chat container */
+        #chat-container {
+            max-width: 400px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        /* Style for buttons */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<p id="greeting"></p>
+<div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Welcome to AssistBot ! 🎉</h4>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <!-- Messages will go here -->
+                <div class="chat-messagess">
+                    <a href="/recommendation" class="chat-link">1. Recommendation <br></a>
+                    <a href="/contact" class="chat-link">2. Contact<br></a>
+                    <a href="/profile" class="chat-link">3. profile<br></a>
+                    <a href="http://127.0.0.1:5000/" class="chat-link">4. Home<br></a>
+                </div>
+                <h1 class="chatbot__content--starter">Good day! If you have any questions or need assistance, feel free to ask... 😊 Main menu:-</h1>
+            </div>
+
+            <div class="chatbox__footer">
+                <input type="text" placeholder="Write a message...">
+                <div class="button-group">
+                   </button>
+                    <button class="chatbox__send--footer send__button" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button id="chatbot-icon" onclick="togglePopup()">
+                <img src="{{ url_for('static', filename='images/friendly-chatbott.jpg') }}" alt="Chatbot Image">
+            </button>
+        </div>
+    </div>
+</div>
+<div id="response"></div>
+<!-- Add a pop-up div -->
+<div id="popup" class="popup">
+    <p>Welcome to our website! If you have any specific questions or need assistance, please click on the Live Chat icon! 😊 </p>
+    <button onclick="closePopup()" style="color: white; border-radius: 1px; padding: 5px 10px; background-color: lightgreen;"
+            onmouseover="this.style.backgroundColor='green'" onmouseout="this.style.backgroundColor='lightgreen'">Close!
+    </button>
+
+</div>
+
+<script>
+
+    function displayGreeting() {
+        var name = document.getElementById("name").value;
+        var greeting = "Hello, " + name + "! How can I assist you today?";
+        document.getElementById("greeting").innerHTML = greeting;
+    }
+
+    // Function to open/close the pop-up
+    function togglePopup() {
+        const popup = document.getElementById('popup');
+        if (popup.style.display === 'block') {
+            closePopup();
+        } else {
+            openPopup();
+            closePopupMessage();  // Close the pop-up message if it's open
+        }
+    }
+
+    // Function to open the pop-up
+    function openPopup() {
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    // Function to close the pop-up
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    // Function to close the pop-up message
+    function closePopupMessage() {
+        setTimeout(closePopup, 0);  // Close the pop-up immediately
+    }
+
+    // Function to send a message (you can customize this)
+    function sendMessage() {
+        var message = document.querySelector('.chatbox__footer input').value;
+        // Add further logic to handle the message (e.g., display it in the chatbox__messages)
+        console.log('Message sent:', message);
+    }
+
+    // Function to show the pop-up message automatically
+    function showPopupMessage() {
+        openPopup();
+        // You can set a timeout to automatically close the pop-up after a certain duration
+        setTimeout(closePopup, 15000); // Close the pop-up after 15 seconds (adjust as needed)
+    }
+
+    // Call the function to show the pop-up automatically when the page loads
+    window.onload = showPopupMessage;
+
+    // Voice Recognition Functions
+    function startVoiceRecognition() {
+        fetch('/voice_recognition', { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerText = "Chatbot Response: " + data.answer;
+                speak(data.voice_input);
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function speak(text) {
+        var synth = window.speechSynthesis;
+        var utterance = new SpeechSynthesisUtterance(text);
+        synth.speak(utterance);
+    }
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

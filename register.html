@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/—Pngtree—simple character financial business_935328.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+            animation: slideIn 1s ease;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom {
+            margin-top: 15px;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+        <h2 class="text-center">User Registration</h2>
+        <form action="{{ url_for('register') }}" method="post">
+            {% if message is defined and message %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <!-- Add more gender options if needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" required>
+            </div>
+            <!-- Optional Preferences -->
+            <div class="form-group">
+                <label for="like_genre">Like Genre:</label>
+                <input type="text" class="form-control" id="like_genre" name="like_genre" placeholder="Enter liked genre (optional)">
+            </div>
+            <div class="form-group">
+                <label for="like_actor">Like Actor:</label>
+                <input type="text" class="form-control" id="like_actor" name="like_actor" placeholder="Enter liked actor (optional)">
+            </div>
+            <div class="form-group">
+                <label for="like_director">Like Director:</label>
+                <input type="text" class="form-control" id="like_director" name="like_director" placeholder="Enter liked director (optional)">
+            </div>
+            <!-- End Optional Preferences -->
+
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <p class="text-center bottom">Already have an account? <a href="{{url_for('login')}}">Login here</a></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
