@@ -6,11 +6,7 @@ from flask_mysqldb import MySQL
 from flask import flash
 import plotly.offline as pyo
 
-import dash
-from dash import dcc, html
 from datetime import datetime
-from wordcloud import WordCloud
-
 from dash.dependencies import Input, Output
 import MySQLdb.cursors
 import re
